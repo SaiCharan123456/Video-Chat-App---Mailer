@@ -17,6 +17,9 @@ const transporter = nodemailer.createTransport({
 
 app.post("/send-mail", (req, res) => {
     const to = req.body.to;
+    const name = req.body.name
+    const date = req.body.date
+    const amount = req.body.amount
     const mailData = {
         from: "boppana.saicharan999@gmail.com",
         to: to,
@@ -42,4 +45,4 @@ app.post("/send-mail", (req, res) => {
     });
 })
 
-server.listen(process.env.PORT || 3030);
+server.listen(process.env.PORT || 3000);
